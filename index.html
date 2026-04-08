@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DigitalHealthTech | Melissa Zamorano</title>
+
+<style>
+:root {
+    --morado: #6a0dad;
+    --morado-oscuro: #2a004d;
+    --fucsia: #ff2bc2;
+    --cyan: #00eaff;
+    --blanco: #ffffff;
+    --negro: #0f0f17;
+}
+
+/* FONDO GLOBAL FUTURISTA */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top left, #1a0033, #0f0f17);
+    color: var(--blanco);
+    line-height: 1.6;
+}
+
+/* BANNER MORADO */
+.banner-header {
+    width: 100%;
+    background: linear-gradient(90deg, var(--morado-oscuro), var(--morado), var(--fucsia));
+    padding: 1.2rem 0;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+    border-bottom: 2px solid var(--cyan);
+}
+
+.banner-header h1 {
+    margin: 0;
+    font-size: 1.9rem;
+    color: var(--cyan);
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px var(--cyan);
+}
+
+.banner-header p {
+    margin: 0;
+    margin-top: 4px;
+    font-size: 1rem;
+    color: var(--blanco);
+    opacity: 0.9;
+}
+
+/* BANNER ANIMADO */
+.banner-superior {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-bottom: 2px solid var(--cyan);
+    box-shadow: 0 0 25px rgba(0, 234, 255, 0.3);
+}
+
+.banner-superior img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+    filter: blur(1px) brightness(1.1);
+    animation: movimientoVacunas 12s ease-in-out infinite;
+}
+
+@keyframes movimientoVacunas {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}
+
+.banner-superior::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,234,255,0.25) 0%, transparent 70%);
+    opacity: 0.25;
+    animation: particulasVacunas 8s infinite linear;
+}
+
+@keyframes particulasVacunas {
+    0% { transform: translateY(0); opacity: 0.25; }
+    100% { transform: translateY(-40px); opacity: 0.15; }
+}
+
+/* SELLO ANIMADO */
+.sello-vacunas {
+    margin: 20px auto;
+    width: fit-content;
+    padding: 8px 18px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cyan);
+    border: 2px solid var(--cyan);
+    text-shadow: 0 0 8px var(--cyan);
+    background: rgba(20, 0, 40, 0.45);
+    backdrop-filter: blur(4px);
+    animation: selloBrillo 4s infinite ease-in-out, selloFlotar 6s infinite ease-in-out;
+}
+
+@keyframes selloBrillo {
+    0% { box-shadow: 0 0 12px rgba(0, 234, 255, 0.4); }
+    50% { box-shadow: 0 0 28px rgba(255, 43, 194, 0.6); }
+    100% { box-shadow: 0 0 12px rgba(0, 234, 255, 0.4); }
+}
+
+@keyframes selloFlotar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+/* LOGO */
+.logo-lateral {
+    width: 260px;
+    position: fixed;
+    left: 20px;
+    top: 40px;
+    z-index: 10;
+    filter: drop-shadow(0 0 25px var(--cyan));
+    animation: pulso 3s infinite ease-in-out;
+}
+
+@keyframes pulso {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* SECCIONES */
+.section {
+    padding: 2.5rem 1.5rem;
+    max-width: 900px;
+    margin: auto;
+    margin-left: 360px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 234, 255, 0.15);
+    border-radius: 12px;
+}
+
+/* TÍTULOS */
+.section h2 {
+    color: var(--cyan);
+    border-left: 4px solid var(--fucsia);
+    padding-left: 10px;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 12px var(--cyan), 0 0 25px var(--fucsia);
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* PRESENTACIÓN */
+.presentacion {
+    margin-left: 360px;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--morado-oscuro), #1a0033);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 234, 255, 0.25);
+    text-align: center;
+}
+
+.presentacion h2 {
+    font-size: 2.2rem;
+    color: var(--cyan);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px var(--cyan);
+}
+
+.presentacion p {
+    font-size: 1.2rem;
+    color: var(--blanco);
+    opacity: 0.9;
+    margin: 0.3rem 0;
+}
+
+/* BOTONES MÁS PEQUEÑOS */
+.boton-futurista {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    margin: 0.4rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #5a0099, #b3008f);
+    color: var(--blanco);
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(0, 234, 255, 0.5);
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.25);
+    transition: 0.35s ease;
+    font-size: 0.9rem;
+}
+
+.boton-futurista:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 22px rgba(255, 43, 194, 0.6);
+}
+
+/* DASHBOARDS */
+.dashboard {
+    background: #1a002e;
+    border: 1px solid var(--morado);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.2);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dashboard img {
+    width: 85%;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+}
+
+/* DESCARGAS */
+.descargas a {
+    background: linear-gradient(135deg, var(--morado), var(--fucsia));
+    color: var(--blanco);
+    padding: 1rem 1.8rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--cyan);
+    box-shadow: 0 0 18px rgba(0, 234, 255, 0.5);
+    transition: 0.3s ease;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* CONTACTO */
+.contacto {
+    animation: brillo-contacto 6s infinite alternate;
+}
+
+@keyframes brillo-contacto {
+    0% { box-shadow: 0 0 15px rgba(0, 234, 255, 0.3); }
+    100% { box-shadow: 0 0 35px rgba(255, 43, 194, 0.6); }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BANNER MORADO -->
+<div class="banner-header">
+    <h1>DigitalHealthTech</h1>
+    <p>Salud Digital & Informática Biomédica</p>
+</div>
+
+<!-- BANNER ANIMADO -->
+<div class="banner-superior">
+    <img src="img/img_web.png" alt="Banner DigitalHealthTech">
+</div>
+
+<!-- SELLO -->
+<div class="sello-vacunas">
+    Vacunación a Domicilio — Profesional Certificada
+</div>
+
+<!-- LOGO -->
+<img src="img/ovalo.png" alt="Logo DigitalHealthTech" class="logo-lateral">
+
+<!-- PRESENTACIÓN -->
+<section class="presentacion">
+    <h2>Melissa Zamorano</h2>
+    <p>Tecnóloga en Informática Biomédica</p>
+    <p>Técnico de Enfermería (TENS)</p>
+
+    <div class="botones-contacto">
+        <a class="boton-futurista" href="#">WhatsApp</a>
+        <a class="boton-futurista" href="#">LinkedIn</a>
+    </div>
+
+    <p style="margin-top: 1rem; opacity: 0.8;">
+        Santiago, Chile — Atención a domicilio
+    </p>
+</section>
+
+<!-- PERFIL PROFESIONAL -->
+<section class="section destacado">
+    <h2>Perfil Profesional</h2>
+    <p>
+        Profesional en Salud Digital con formación híbrida en Informática Biomédica y TENS, especializada en soporte funcional de sistemas HIS (TrakCare), interoperabilidad, RCE y gestión de incidencias críticas.
+    </p>
+    <p>
+        Experiencia en instituciones públicas y privadas, actuando como enlace entre equipos clínicos y TI para asegurar continuidad operativa, adopción digital y mejora de procesos asistenciales.
+    </p>
+</section>
+
+<!-- INFORMÁTICA BIOMÉDICA -->
+<section class="section">
+    <h2>Informática Biomédica</h2>
+
+    <ul class="checklist">
+        <li>Implementación y soporte funcional de sistemas HIS.</li>
+        <li>Gestión de incidencias y continuidad operativa.</li>
+        <li>Optimización de flujos clínicos y administrativos.</li>
+        <li>Calidad, validación y trazabilidad de datos clínicos.</li>
+        <li>Capacitación de usuarios y adopción digital.</li>
+        <li>Evaluación de proyectos TI en salud.</li>
+        <li>Interoperabilidad (HL7, FHIR, SNOMED CT).</li>
+    </ul>
+</section>
+
+<!-- TENS -->
+<section class="section">
+    <h2>Técnico de Enfermería (TENS)</h2>
+
+    <ul class="checklist-tens">
+        <li>Administración de medicamentos (oral, SC, IM, EV).</li>
+        <li>Control y registro de signos vitales.</li>
+        <li>Curaciones simples y avanzadas con técnica estéril.</li>
+        <li>Cuidados respiratorios (oxigenoterapia, cánula, VM/VNI).</li>
+        <li>Manejo de traqueostomía y aspiración de secreciones.</li>
+        <li>Manejo de colostomía y dispositivos.</li>
+        <li>Alimentación asistida (oral, SNG, GTT/PEG).</li>
+        <li>Apoyo al equipo de neurorehabilitación en deglución y alimentación segura del paciente.</li>
+        <li>Acompañamiento terapéutico y educación a la familia.</li>
+        <li><strong>Administración de vacunas particulares</strong> para personas fuera de los grupos MINSAL.</li>
+        <li><strong>Vacunación a domicilio</strong> para grupos que requieren atención personalizada.</li>
+
+        <li><strong>Registro Prestador de Salud</strong> — 
+            <a href="docs/RegistroPrestadores.pdf" download style="color: var(--cyan); text-decoration: underline;">
+                Descargar certificado
+            </a>
+        </li>
+
+        <li><strong>Título profesional de Técnico Superior en Enfermería</strong> — 
+            <a href="docs/tecnicosuperiordeenfermeria.pdf" download style="color: var(--cyan); text-decoration: underline;">
+                Descargar título
+            </a>
+        </li>
+    </ul>
+</section>
+
+<!-- LOGROS -->
+<section class="section">
+    <h2>Logros en Salud Digital</h2>
+
+    <div class="dashboard">
+        <h3>Soporte funcional HIS</h3>
+        <img src="img/dashboards5.png">
+        <p>Capacité a más de 600 usuarios clínicos y administrativos, asegurando continuidad operativa 24/7.</p>
+    </div>
+
+    <div class="dashboard">
+        <h3>Reducción de tiempos de resolución HIS</h3>
+        <img src="img/dashboards1.png">
+        <p>Contribuí a reducir entre un 20% y 30% los tiempos de resolución de incidencias críticas.</p>
+    </div>
+
+    <div class="dashboard">
+        <h3>Reducción en tiempos de gestión de listas de espera</h3>
+        <img src="img/dashboards3.png">
+        <p>Optimización operativa y depuración de datos en coordinación público-privada.</p>
+    </div>
+
+    <div class="dashboard">
+        <h3>Cumplimiento de bioseguridad COVID‑19</h3>
+        <img src="img/dashboards2.png">
+        <p>100% de cumplimiento en protocolos de bioseguridad en toma de PCR a domicilio.</p>
+    </div>
+</section>
+
+<!-- DESCARGAS -->
+<section class="section descargas">
+    <h2>Títulos</h2>
+
+    <a href="docs/Tecnologaeninformaticabiomedica.pdf" download>
+        Tecnóloga en Informática Biomédica
+    </a>
+
+    <a href="docs/tecnicosuperiordeenfermeria.pdf" download>
+        Técnico en Enfermería (TENS)
+    </a>
+
+    <a href="docs/EvaluacionProyectosTI.pdf" download>
+        Certificado de Evaluación de Proyectos TI
+    </a>
+
+    <h2>Certificaciones OPS/PAHO</h2>
+
+    <a href="docs/InteroperabilidadFHIR.pdf" download>
+        Interoperabilidad & FHIR
+    </a>
+
+    <a href="docs/SistemasInformacionSalud.pdf" download>
+        Sistemas de Información en Salud
+    </a>
+
+    <a href="docs/CIE11.pdf" download>
+        CIE‑11
+    </a>
+
+    <a href="docs/RegistroPrestadores.pdf" download>
+        Registro Prestador de Salud
+    </a>
+
+    <h2>CV</h2>
+
+    <a href="docs/CV_MelissaZamorano.pdf" download>
+        Currículum Vitae
+    </a>
+</section>
+
+<!-- CONTACTO -->
+<section class="section contacto">
+    <h2>Contacto</h2>
+    <p>WhatsApp: +56 958758398</p>
+    <p>LinkedIn: linkedin.com/in/melissa-z-7713a4217</p>
+</section>
+
+</body>
+</html>
